@@ -12,4 +12,8 @@ $ docker run --rm openmicroscopy/octave example1.m arg1       # Run the example 
 $ docker run --rm -v $(pwd):/source openmicroscopy/octave /source/myfile.m
 ```
 
+
+docker build --tag=octavedock .
+docker run --rm -it -v /tmp:/home/octave octavedock
+
 Mount your local source folder to the container and run it inside the container.

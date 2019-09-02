@@ -10,7 +10,10 @@ RUN apt-get update \
 ADD install.sh install.sh
 RUN sh ./install.sh && rm install.sh
 RUN useradd -ms /bin/bash octave
+ADD ICLabel /home/octave
+ADD firfilt /home/octave
 ADD *.m /home/octave/
+ADD *.set /home/octave/
 RUN chown -R octave:octave /home/octave/
 
 USER octave
