@@ -5,9 +5,18 @@ A simple docker application running Octave and some EEGLAB scripts.
 ## Usage
 
 ```
-$ docker run --rm -it openmicroscopy/octave                   # Octave shell
-$ docker run --rm -it --entrypoint bash openmicroscopy/octave # Bash shell
-$ docker run --rm openmicroscopy/octave -h                    # Get octave help
-$ docker run --rm openmicroscopy/octave example1.m arg1       # Run the example file
-$ docker run --rm -v $(pwd):/source openmicroscopy/octave /source/myfile.m
+$ docker build --tag=octavedock13 .
+$ docker run --rm -it octavedock13
+$ # Then at the Octave prompt, install the signal processing toolbox
+$ pkg install -forge control
+$ pkg install -forge signal
+$ pkg load signal
+$ # Then run script
+$ script_test
+```
+
+Run the script file directly (for a modified version that would include the signal processing toolbox)
+
+```
+$ docker run --rm -it octavedock script_test.m arg1  # Run the example file
 ```
