@@ -7,7 +7,7 @@ A simple docker application running Octave and some EEGLAB scripts.
 ```
 $ docker build --tag=octavedock13 .
 $ docker run --rm -it octavedock13
-$ # Then at the Octave prompt, install the signal processing toolbox
+$ # Then at the Octave prompt, install the signal processing toolbox (this should really be done in the Docker file)
 $ pkg install -forge control
 $ pkg install -forge signal
 $ pkg load signal
